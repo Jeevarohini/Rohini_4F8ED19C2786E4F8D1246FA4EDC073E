@@ -1,19 +1,20 @@
-# Factorial of a number using recursion
+# Linear Search in Python
 
 
-def recur_factorial(n):
-  if n == 1:
-    return n
-  else:
-    return n * recur_factorial(n - 1)
+def linearSearch(array, n, x):
+
+  # Going through array sequencially
+  for i in range(0, n):
+    if (array[i] == x):
+      return i
+  return -1
 
 
-num = 7
-
-# check if the number is negative
-if num < 0:
-  print("Sorry, factorial does not exist for negative numbers")
-elif num == 0:
-  print("The factorial of 0 is 1")
+array = [2, 4, 0, 1, 9]
+x = 1
+n = len(array)
+result = linearSearch(array, n, x)
+if (result == -1):
+  print("Element not found")
 else:
-  print("The factorial of", num, "is", recur_factorial(num))
+  print("Element found at index: ", result)
